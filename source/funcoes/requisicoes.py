@@ -23,7 +23,8 @@ def RequisitaJogo():
     #horario         = ValidaHorario(horario)
     print()
 
-    CadastraJogo(time_mandante, time_visitante, data, horario)
+    __id = CadastraJogo(time_mandante, time_visitante, data, horario)
+    return __id
 
 #   Funcionando...
 def RequisitaJogada(id_jogo):
@@ -44,7 +45,8 @@ def RequisitaJogada(id_jogo):
     #tipo_jogada     = ValidaJogada(tipo_jogada)
     print()
     
-    CadastraJogada(id_jogo, tempo_inicio, tempo_fim, tipo_jogada)
+    __id = CadastraJogada(id_jogo, tempo_inicio, tempo_fim, tipo_jogada)
+    return __id
 
 #   Funcionando...
 def RequisitaPBP(id_jogo, id_jogada):
@@ -55,6 +57,7 @@ def RequisitaPBP(id_jogo, id_jogada):
     #   n_jogador
     #   tipo_estat
     #   resultado
+    __id = []
 
     print("\nDefinindo dados PlayByPlay...")
     tipo_time       = str(input("Tipo do time:              "))
@@ -67,5 +70,7 @@ def RequisitaPBP(id_jogo, id_jogada):
         n_jogador       = int(input("Identificação do jogador:  "))
         tipo_estat      = str(input("Tipo de estatística:       "))
         resultado     = float(input("Resultado da jogada:       "))
-        CadastraPlayByPlay(id_jogo, id_jogada, tipo_time, posicao, n_jogador, tipo_estat, resultado)
+        __id.append(CadastraPlayByPlay(id_jogo, id_jogada, tipo_time, posicao, n_jogador, tipo_estat, resultado))
         print()
+
+    return __id

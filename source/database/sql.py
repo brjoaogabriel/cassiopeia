@@ -25,6 +25,21 @@ def InstalaBase():
         print("Erro ao criar o database")
         return False
 
+def SolicitaInstalacao():
+    print("""\n
+    1.  É a minha primeira vez com o programa
+
+    0.  Já utilizei o programa antes
+    \n""")
+    __resp = str(input("Escolha uma opção que melhor te represente >> "))
+    if __resp == 1:
+        print("Por favor, aguarde...")
+        InstalaBase()
+    else:
+        print("OK...")
+
+    return True
+
 #1.
 #   DEU CERTO
 CriaDatabase = """
